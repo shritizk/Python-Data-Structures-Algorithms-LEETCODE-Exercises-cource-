@@ -4,7 +4,7 @@ class Node :
         self.next = None
 
 class LinkedList:
-    def __int__(self , value):
+    def __init__(self , value):
         new_node = Node(value)
         self.head = new_node
         self.tail = new_node
@@ -49,9 +49,27 @@ class LinkedList:
         self.length+=1
         return True
 
-            
-
-
+    def popFirst(self):
+        if self.length == 0  :
+            return False
+        else:
+            temp = self.head
+            self.head = self.head.next
+            temp.next = None
+            self.length -=1
+            if self.length == 0:
+                self.tail = None
+            return temp
+    
+    def get(self,index):
+        if index < 0 or index >= self.length:
+            return None
+        else:
+            current = self.head
+            while(index>0):
+                current = current.next
+                index -=1
+            return current
 
 # practice
 my_ll = LinkedList(4)
