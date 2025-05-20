@@ -93,7 +93,25 @@ class LinkedList:
             self.length +=1
             return True
         
-    
+    def remove(self,index):
+        if index > self.length or index < 0 :
+            return False
+        if index == 0:
+            self.popFirst()
+        if index == self.length : 
+            self.pop()
+        else:
+            pre = self.get(index-1)
+            temp = pre.next
+            pre.next = temp.next    
+            temp.next - None
+            self.length -=1
+            return True
+
+
+
+
+
             
 # practice      
 my_ll = LinkedList(4)
