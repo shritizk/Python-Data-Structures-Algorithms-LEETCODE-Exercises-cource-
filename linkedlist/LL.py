@@ -70,7 +70,14 @@ class LinkedList:
                 current = current.next
                 index -=1
             return current
+    
+    def set_value(self,index,value):
+        temp = self.get(index)
+        if temp : 
+            temp.value = value
+            return True
+        return False
 
-# practice
+# practice      
 my_ll = LinkedList(4)
 
